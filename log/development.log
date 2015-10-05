@@ -3091,3 +3091,25 @@ Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-05 12:46:05 
 
 
 Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-05 12:46:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBreweries (20151005114938)
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "breweries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nom" varchar(255), "since" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151005114938"]]
+  [1m[36m (42.5ms)[0m  [1mcommit transaction[0m
+Migrating to AddBrewerieFromBeer (20151005115024)
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "beers" ADD "brewerie_id" integer[0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_beers_on_brewerie_id" ON "beers" ("brewerie_id")[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151005115024"]]
+  [1m[36m (19.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_beers_on_brewerie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_beers_on_brewerie_id' AND type='index'
+[0m
