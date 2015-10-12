@@ -1,8 +1,10 @@
 class Note < ActiveRecord::Base
-  belongs_to :beer, :beer_geek
-
-
-  notes.map{|note|
-  	note.value
-  }.sum/notes.size unless notes.empty?
+  belongs_to :beer
+  belongs_to :beer_geek
+  
+  def moy
+	  notes.map{|note|
+	  	note.value
+	  }.sum/notes.size unless notes.empty?
+  end
 end

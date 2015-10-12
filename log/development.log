@@ -6527,3 +6527,461 @@ Migrations are pending. To resolve this issue, run:
   Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
   Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
   Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.3ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:39:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  /usr/lib/ruby/vendor_ruby/active_record/migration.rb:389:in `check_pending!'
+  /usr/lib/ruby/vendor_ruby/active_record/migration.rb:377:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:82:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/reloader.rb:73:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnBeerGeekFromNotes (20151012112954)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "notes" ADD "beer_geek_id" integer[0m
+SQLite3::SQLException: no such table: notes: ALTER TABLE "notes" ADD "beer_geek_id" integer
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnBeerGeekFromNotes (20151012112954)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "notes" ADD "beer_geek_id" integer[0m
+SQLite3::SQLException: no such table: notes: ALTER TABLE "notes" ADD "beer_geek_id" integer
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColumnBeerGeekFromNotes (20151012112954)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "notes" ADD "beer_geek_id" integer[0m
+SQLite3::SQLException: no such table: notes: ALTER TABLE "notes" ADD "beer_geek_id" integer
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateNotes (20151012114302)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" integer, "beer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_notes_on_beer_id" ON "notes" ("beer_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012114302"]]
+  [1m[36m (118.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddColumnBeerGeekFromNotes (20151012114303)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "notes" ADD "beer_geek_id" integer[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_beer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_beer_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_notes_on_beer_geek_id" ON "notes" ("beer_geek_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151012114303"]]
+  [1m[36m (102.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_beer_geeks_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_beer_geeks_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_beer_geeks_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_beer_geeks_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_beers_on_brewerie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_beers_on_brewerie_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_beer_geek_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_beer_geek_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_beer_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_beer_id' AND type='index'
+[0m
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  [1m[35mBrewerie Load (0.2ms)[0m  SELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (29.5ms)
+Completed 200 OK in 111ms (Views: 91.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+
+Started GET "/stylesheets/application.scss.css" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.scss.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.9ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:35 +0200
+
+
+Started GET "/beers/8/edit" for 127.0.0.1 at 2015-10-12 13:47:40 +0200
+Processing by BeersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBeerGeek Load (0.3ms)[0m  [1mSELECT  "beer_geeks".* FROM "beer_geeks"  WHERE "beer_geeks"."id" = 1  ORDER BY "beer_geeks"."id" ASC LIMIT 1[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered beers/_form.html.haml (19.0ms)
+  Rendered beers/edit.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 93ms (Views: 73.1ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/beers/8" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+Processing by BeersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u/MFpMpDSNgGK3RX4WC8qvCNt4/d3QMg9wOlUZ7QFpM=", "beer"=>{"name"=>"lager beer", "description"=>"", "note"=>"9"}, "commit"=>"Update Beer", "id"=>"8"}
+  [1m[36mBeerGeek Load (0.3ms)[0m  [1mSELECT  "beer_geeks".* FROM "beer_geeks"  WHERE "beer_geeks"."id" = 1  ORDER BY "beer_geeks"."id" ASC LIMIT 1[0m
+  [1m[35mBeer Load (0.1ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "beers" SET "note" = ?, "updated_at" = ? WHERE "beers"."id" = 8  [["note", 9], ["updated_at", "2015-10-12 11:47:43.199739"]]
+  [1m[36m (117.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/beers/8
+Completed 302 Found in 125ms (ActiveRecord: 117.9ms)
+
+
+Started GET "/beers/8" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mBeer Load (0.1ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered beers/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+
+Started GET "/stylesheets/application.scss.css" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.scss.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (21.7ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-12 13:47:43 +0200
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:47:44 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  [1m[35mBrewerie Load (0.1ms)[0m  SELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (9.2ms)
+Completed 200 OK in 88ms (Views: 86.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers"
+  [1m[36mBrewerie Load (0.2ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (30.9ms)
+Completed 200 OK in 110ms (Views: 90.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/stylesheets/application.scss.css" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.scss.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-12 13:48:14 +0200
+
+
+Started GET "/beers/8" for 127.0.0.1 at 2015-10-12 13:48:17 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mBeer Load (0.2ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered beers/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:48:18 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  [1m[35mBrewerie Load (0.1ms)[0m  SELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2015-10-12 13:48:21 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBeer Load (0.1ms)[0m  [1mSELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered beers/show.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 13:48:26 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.3ms)[0m  SELECT "beers".* FROM "beers"
+  [1m[36mBrewerie Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers"
+  [1m[36mBrewerie Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (5.8ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/application.scss.css" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/application.scss.css"):
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2015-10-12 14:01:24 +0200
+
+
+Started GET "/beers/8" for 127.0.0.1 at 2015-10-12 14:01:27 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mBeer Load (0.1ms)[0m  SELECT  "beers".* FROM "beers"  WHERE "beers"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered beers/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 14:01:29 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  [1m[35mBrewerie Load (0.1ms)[0m  SELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/beers/new" for 127.0.0.1 at 2015-10-12 14:01:30 +0200
+Processing by BeersController#new as HTML
+  [1m[36mBeerGeek Load (0.2ms)[0m  [1mSELECT  "beer_geeks".* FROM "beer_geeks"  WHERE "beer_geeks"."id" = 1  ORDER BY "beer_geeks"."id" ASC LIMIT 1[0m
+  Rendered beers/_form.html.haml (20.0ms)
+  Rendered beers/new.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 96ms (Views: 75.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2015-10-12 14:01:31 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers"
+  [1m[36mBrewerie Load (0.1ms)[0m  [1mSELECT  "breweries".* FROM "breweries"  WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered beers/index.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.3ms)
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT  "beers".* FROM "beers"   ORDER BY "beers"."id" ASC LIMIT 1[0m
+  [1m[35mBeerGeek Load (0.2ms)[0m  SELECT  "beer_geeks".* FROM "beer_geeks"   ORDER BY "beer_geeks"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "notes" ("beer_geek_id", "beer_id", "created_at", "updated_at", "value") VALUES (?, ?, ?, ?, ?)  [["beer_geek_id", 1], ["beer_id", 1], ["created_at", "2015-10-12 12:14:02.629256"], ["updated_at", "2015-10-12 12:14:02.629256"], ["value", 5]]
+  [1m[36m (110.2ms)[0m  [1mcommit transaction[0m

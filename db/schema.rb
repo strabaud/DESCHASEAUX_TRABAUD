@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012093505) do
+ActiveRecord::Schema.define(version: 20151012114303) do
 
   create_table "beer_geeks", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -62,5 +62,16 @@ ActiveRecord::Schema.define(version: 20151012093505) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "notes", force: true do |t|
+    t.integer  "value"
+    t.integer  "beer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "beer_geek_id"
+  end
+
+  add_index "notes", ["beer_geek_id"], name: "index_notes_on_beer_geek_id"
+  add_index "notes", ["beer_id"], name: "index_notes_on_beer_id"
 
 end
