@@ -1,4 +1,7 @@
 class BeersController < ApplicationController
+
+
+  before_filter :authenticate_beer_geek!, except: [:index,:show]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
 
 
@@ -7,6 +10,9 @@ class BeersController < ApplicationController
 	@notes=Beer.notes
   end
     
+
+
+
 
 
   # GET /beers

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :beer_geeks
   get '/beers/notes' => 'beers#notes',as: :notes_beer
 
   resources :beers
