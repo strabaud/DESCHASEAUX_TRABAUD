@@ -1,0 +1,9 @@
+%table
+  %thead
+    %tr
+      %th Note
+      %th{:colspan => "1"}
+  %tbody
+    - @notes.each do |n|
+      %tr
+        %td= n
