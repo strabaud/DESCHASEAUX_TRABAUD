@@ -1,5 +1,4 @@
-
-/ %p#notice= notice
+/%p#notice= notice
 
 
 %p
@@ -15,6 +14,17 @@
 %p
 	%strong Note:
 	= @beer.note
+
+%p
+	%strong Moyenne:
+	= @beer.moy
+
+%p
+	%strong qui:
+	-@beer.beer_geeks.each do |bg|
+		%p
+		= "#{bg} a ajouté la note #{bg.notes.map{|n| n.value}.join(" et ").to_s} à cette bière"
+
 
 
 = link_to 'Edit', edit_beer_path(@beer)
