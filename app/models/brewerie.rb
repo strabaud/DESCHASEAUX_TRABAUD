@@ -1,5 +1,10 @@
 class Brewerie < ActiveRecord::Base
-belongs_to :brewerie
-has_many :beers
+
+has_many:beers
+
+	def to_s
+		nom
+	end
+
 
 end

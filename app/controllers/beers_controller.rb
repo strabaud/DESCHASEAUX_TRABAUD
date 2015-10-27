@@ -1,12 +1,25 @@
 class BeersController < ApplicationController
+
+
+  before_filter :authenticate_beer_geek!, except: [:index,:show]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
+
+
+  # GET /beers/notes
+  def notes
+	@notes=Beer.notes
+  end
+    
+
+
+
+
 
   # GET /beers
   # GET /beers.json
   def index
     @beers = Beer.all
   end
-
 
   # GET /beers/1
   # GET /beers/1.json
@@ -17,16 +30,11 @@ class BeersController < ApplicationController
   def new
     @beer = Beer.new
   end
-  
-  # GET /beers/notes
-  def notes
-    @notes = Beer.notes
-  end
 
   # GET /beers/1/edit
   def edit
   end
-  
+
   # POST /beers
   # POST /beers.json
   def create
@@ -75,6 +83,6 @@ class BeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
-      params.require(:beer).permit(:beer, :description, :note)
+      params.require(:beer).permit(:name, :description, :note)
     end
 end

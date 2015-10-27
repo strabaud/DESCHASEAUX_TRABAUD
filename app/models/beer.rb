@@ -1,20 +1,36 @@
 class Beer < ActiveRecord::Base
-	def note= n
-		if n.to_i < 0
-			n = 0
-		elsif n.to_i > 10 
-			n = 10
+	belongs_to :brewerie
+	has_many :notes
+	has_many :beer_geeks, -> { distinct }, through: :notes
+	
+	def note= note
+		if note.to_i < 0
+			super 0
+		elsif note.to_i > 10
+			super 10
+		else
+			super note
 		end
-		super n
-
 	end
+
 
 
 	def self.notes
-		notes = []
-		Beer.all.each do |beer|
-		notes << beer.note
+
+		n=[]
+		Beer.all.each do |b|
+				
+			n << b.note
+
 		end
-		return notes
+
+	return n
+			 
+
 	end
+
+
+	def moy
+	 return notes.map{|note|note.value}.sum / notes.size unless notes.empty?
+  	end
 end

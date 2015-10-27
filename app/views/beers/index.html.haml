@@ -4,16 +4,18 @@
     %tr
       %th Beer
       %th Description
+      %th Brewery
       %th Note
       %th{:colspan => "3"}
   %tbody
     - @beers.each do |beer|
       %tr
-        %td= beer.beer
+        %td= beer.name
         %td= beer.description
+        %td= beer.brewerie
         %td= beer.note
-        %td= link_to 'Show', beer
-        %td= link_to 'Edit', edit_beer_path(beer)
-        %td= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' }
+        %td.waves-effect.waves-light.btn= link_to 'Show', beer , style:"color:white"
+        %td.waves-effect.waves-light.btn.grey= link_to 'Edit', edit_beer_path(beer), style:"color:white"
+        %td.waves-effect.waves-light.btn.grey= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' }, style:"color:white"
 %br
   = link_to 'New Beer', new_beer_path
